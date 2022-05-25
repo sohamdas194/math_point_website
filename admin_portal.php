@@ -4,7 +4,7 @@ if (!isset($_SESSION['admin'])) {
 	header('location:admin.php');
 }
 
-$result = pg_query($conn, "SELECT pwd FROM `admin` Where id=".$_SESSION['adminID']);
+$result = pg_query($conn, "SELECT pwd FROM admin Where id=".$_SESSION['adminID']);
 $row = pg_fetch_array($result);
 $admin_pwd = $row['pwd'];
 ?>
@@ -111,7 +111,7 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = pg_query($conn, "SELECT * FROM \"user\" ");
+			$result = pg_query($conn, "SELECT * FROM \"user\"");
 			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>
