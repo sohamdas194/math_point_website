@@ -1,0 +1,14 @@
+<?php
+include("config.php");
+if(isset($_SESSION['admin'])) 
+{
+	header('location:admin.php');
+}
+else
+{
+	header('location:student.php');
+}
+session_unset();
+session_destroy();
+exit;
+?>
