@@ -41,7 +41,7 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = pg_query($conn, "SELECT * FROM `contact`");
+			$result = pg_query($conn, "SELECT * FROM contact");
 			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>
@@ -75,7 +75,7 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = pg_query($conn, "SELECT * FROM `feedback`");
+			$result = pg_query($conn, "SELECT * FROM feedback");
 			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>
@@ -111,7 +111,7 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = pg_query($conn, "SELECT * FROM `user`");
+			$result = pg_query($conn, "SELECT * FROM user");
 			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>

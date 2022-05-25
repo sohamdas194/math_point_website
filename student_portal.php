@@ -4,7 +4,7 @@ if (!isset($_SESSION['user'])) {
 	header('location:student.php');
 }
 $uname = $_SESSION['user'];	
-$result = pg_query($conn, "SELECT * FROM `user` WHERE `email` = '$uname'");
+$result = pg_query($conn, "SELECT * FROM user WHERE email = '$uname'");
 while ($r = pg_fetch_array($result)) {
 ?>
 

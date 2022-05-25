@@ -5,9 +5,8 @@ if (isset($_POST['submit']))
 {
 	$uname=processInput($_POST['username']);
 	$pwd=processInput($_POST['pwd']);
-	$result=pg_query($conn,"SELECT * FROM `user` WHERE `email`='$uname' and `password`='$pwd'");
+	$result=pg_query($conn,"SELECT * FROM user WHERE email='$uname' and password='$pwd'");
 	if($result){
-	    session_start();
 	    $_SESSION['user']=$uname;
 	    header('location:student_portal.php');
 	}
