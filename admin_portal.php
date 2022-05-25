@@ -4,8 +4,8 @@ if (!isset($_SESSION['admin'])) {
 	header('location:admin.php');
 }
 
-$result = mysqli_query($conn, "SELECT pwd FROM `admin` Where id=".$_SESSION['adminID']);
-$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$result = pg_query($conn, "SELECT pwd FROM `admin` Where id=".$_SESSION['adminID']);
+$row = pg_fetch_array($result);
 $admin_pwd = $row['pwd'];
 ?>
 
@@ -41,8 +41,8 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = mysqli_query($conn, "SELECT * FROM `contact`");
-			while ($r = mysqli_fetch_array($result)) {
+			$result = pg_query($conn, "SELECT * FROM `contact`");
+			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>
 					<td><?php echo $r['name']; ?></td>
@@ -75,8 +75,8 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = mysqli_query($conn, "SELECT * FROM `feedback`");
-			while ($r = mysqli_fetch_array($result)) {
+			$result = pg_query($conn, "SELECT * FROM `feedback`");
+			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>
 					<td><?php echo $r['fname'] . " " . $r['lname']; ?></td>
@@ -111,8 +111,8 @@ $admin_pwd = $row['pwd'];
 		</thead>
 		<tbody>
 			<?php
-			$result = mysqli_query($conn, "SELECT * FROM `user`");
-			while ($r = mysqli_fetch_array($result)) {
+			$result = pg_query($conn, "SELECT * FROM `user`");
+			while ($r = pg_fetch_array($result)) {
 			?>
 				<tr>
 					<td><?php echo $r['fname'] . " " . $r['lname']; ?></td>

@@ -4,8 +4,8 @@ if (!isset($_SESSION['user'])) {
 	header('location:student.php');
 }
 $uname = $_SESSION['user'];	
-$result = mysqli_query($conn, "SELECT * FROM `user` WHERE `email` = '$uname'");
-while ($r = mysqli_fetch_array($result)) {
+$result = pg_query($conn, "SELECT * FROM `user` WHERE `email` = '$uname'");
+while ($r = pg_fetch_array($result)) {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

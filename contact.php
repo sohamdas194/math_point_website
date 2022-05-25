@@ -121,7 +121,7 @@ include("process_input.php");
                                        $name = processInput($_POST['name']);
                                        $email = processInput($_POST['email']);
                                        $message = processInput($_POST['message']);
-                                       $result = mysqli_query($conn, "INSERT INTO `contact`(`name`,`email`,`message`) VALUES('$name','$email','$message')");
+                                       $result = pg_query($conn, "INSERT INTO contact(name,email,message) VALUES('$name','$email','$message')");
                                        if ($result) {
                                     ?>
                                           <center>

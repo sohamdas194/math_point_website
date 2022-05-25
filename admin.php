@@ -5,11 +5,10 @@ if (isset($_POST['submit']))
 {
 	$uname=processInput($_POST['username']);
 	$pwd=processInput($_POST['pwd']);
-	$result=mysqli_query($conn,"SELECT * FROM `admin` WHERE `uname`='$uname' and `pwd`='$pwd'");
-	if(mysqli_num_rows($result)==1){
-	    session_start();
+	$result=pg_query($conn,"SELECT * FROM `admin` WHERE `uname`='$uname' and `pwd`='$pwd'");
+	if($result){
 	    $_SESSION['admin']=$uname;
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $row = pg_fetch_row($result);
         $_SESSION['adminID']=$row["id"];
 	    header('location:admin_portal.php');
 	}

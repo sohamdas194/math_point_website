@@ -126,7 +126,7 @@ include("process_input.php");
                                         $email = processInput($_POST['email']);
                                         $phone = processInput($_POST['phone']);
                                         $comment = processInput($_POST['comment']);
-                                        $result = mysqli_query($conn, "INSERT INTO `feedback`(`fname`,`lname`,`email`,`phone`,`comment`) VALUES('$fname','$lname','$email','$phone','$comment')");
+                                        $result = pg_query($conn, "INSERT INTO feedback(fname,lname,email,phone,comment) VALUES('$fname','$lname','$email','$phone','$comment')");
                                         if ($result) {
                                     ?>
                                             <center>

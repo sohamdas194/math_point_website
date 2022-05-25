@@ -125,7 +125,7 @@ include("process_input.php");
                                       $phone = processInput($_POST['phone']);
                                       $course = processInput($_POST['course']);
                                       $password = processInput($_POST['password']);
-                                      $result = mysqli_query($conn, "INSERT INTO `user`(`fname`,`lname`,`email`,`phone`,`course`,`password`) VALUES('$fname','$lname','$email','$phone','$course','$password')");
+                                      $result = pg_query($conn, "INSERT INTO user(fname,lname,email,phone,course,password) VALUES('$fname','$lname','$email','$phone','$course','$password')");
                                       if ($result) {
                                     ?>
                                          <center>
